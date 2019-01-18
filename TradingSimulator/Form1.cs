@@ -15,10 +15,5 @@ namespace TradingSimulator
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            tradingButton.Text = Program.dataBase.traders.Count<TradingSimulator.Classes.Trader>().ToString();
-        }
     }
 }

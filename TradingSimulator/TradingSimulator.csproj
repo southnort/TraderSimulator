@@ -65,6 +65,7 @@
     <Compile Include="Classes\AppContext.cs" />
     <Compile Include="Classes\Item.cs" />
     <Compile Include="Classes\ItemCategory.cs" />
+    <Compile Include="Classes\Order.cs" />
     <Compile Include="Classes\Trader.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

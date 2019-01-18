@@ -11,5 +11,6 @@ namespace TradingSimulator.Classes
         public string name { get; set; }
         public int rarity { get; set; }
         public int categoryId { get; set; }
+        public virtual ItemCategory Category { get; set; }
     }
 }
