@@ -1,70 +1,38 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore;
+using TradingSimulator.Classes;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
-using TradingSimulator.Classes;
-using System.Data.Entity;
+
 
 namespace TradingSimulator
 {
-    static class Program
-    {     
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
-        {            
-            UpdateDataBase();
-
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);  
-            Application.Run(new Form1());
-        }
-
-        static void UpdateDataBase()
+    class Program
+    {
+        static void Main(string[] args)
         {
-            using ()
+            using (TradingContext db = new TradingContext())
             {
+                ItemCategory cat1 = new ItemCategory { Name = "Руда" };
 
-                
-                dataBase.itemCategories.Add(new ItemCategory { name = "Минералы" });
-                dataBase.itemCategories.Add(new ItemCategory { name = "Металлы" });
+                // db.ItemCategories.Add(cat1);
+                                
+                db.SaveChanges();
+
+                Console.WriteLine("Список объектов:");
 
 
-                dataBase.items.Add(new Item
+                var list = db.ItemCategories;
+                foreach (var item in list)
                 {
-                    name = "Бистит",
-                    rarity = 0,
-                    categoryId = 0,
-                });
-
-                dataBase.items.Add(new Item
-                {
-                    name = "Конкрит",
-                    rarity = 0,
-                    categoryId = 0,
-                });
-
-
-                dataBase.items.Add(new Item
-                {
-                    name = "Железо",
-                    rarity = 0,
-                    categoryId = 1,
-                });
-
-                dataBase.items.Add(new Item
-                {
-                    name = "Свинец",
-                    rarity = 0,
-                    categoryId = 1,
-                });
-
-                dataBase.SaveChanges();
-
+                    Console.WriteLine(item.Name);
+                }
             }
+
+
+            Console.Read();
         }
 
+       
     }
 }
