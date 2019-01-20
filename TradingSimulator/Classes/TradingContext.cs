@@ -1,28 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
-using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace TradingSimulator.Classes
 {
-    public class TradingContext : DbContext
+   public class TradingContext:DbContext
     {
-        public DbSet<ItemCategory> ItemCategories { get; set; }
+        public DbSet<ItemCategory> itemCategories { get; set; }
+        public DbSet<Item> items { get; set; }
+        public DbSet<Order> orders { get; set; }
 
-
-
-
+        public DbSet<Trader> traders { get; set; }
 
 
         public TradingContext()
+            : base("DbConnection")
         {
-            Database.EnsureCreated();
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlite("Data Source = trading.db");
 
-        }
+
     }
 }
