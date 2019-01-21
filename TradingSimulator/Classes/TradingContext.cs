@@ -19,6 +19,7 @@ namespace TradingSimulator.Classes
         public TradingContext()
             : base("DbConnection")
         {
+           
         }
 
 
