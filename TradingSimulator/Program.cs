@@ -10,22 +10,33 @@ namespace TradingSimulator
 {
     class Program
     {
+        public static TradingContext dataBase;
+        public static Trader player;
+
         
         static void Main(string[] args)
         {
-            using (TradingContext dataBase = new TradingContext())
+            using (TradingContext context = new TradingContext())
             {
-                
-                foreach (var item in dataBase.itemCategories)
+                dataBase = context;
+                if (dataBase.traders.Count()==0)
                 {
-                    Console.WriteLine(item.name);
+                    dataBase.traders.Add(new Trader { name = "Player" });
+
+                    for (int i = 0; i < 20; i++)
+                    {
+                        dataBase.traders.Add(new Trader { name = Guid.NewGuid().ToString() });
+                    }
+
                 }
 
-                Console.WriteLine("All");
-                Console.Read();
+                player = dataBase.traders.FirstOrDefault(t => t.id == 1);
+
+
+                MainForm form = new MainForm();
+                form.ShowDialog();
+
             }
         }
-
-
     }
 }

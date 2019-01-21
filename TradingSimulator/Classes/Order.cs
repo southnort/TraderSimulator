@@ -16,5 +16,6 @@ namespace TradingSimulator.Classes
         public int count { get; set; }
 
         public long expireTime { get; set; }
+        public long allowChangeTime { get; set; }
     }
 }

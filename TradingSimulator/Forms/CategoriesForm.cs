@@ -13,42 +13,45 @@ namespace TradingSimulator.Forms
 {
     public partial class CategoriesForm : Form
     {
-        
+
         public CategoriesForm()
         {
             InitializeComponent();
 
-            
+            RefreshTable();
 
         }
 
-        private void RefreshTable(List<ItemCategory> list)
+        private void RefreshTable()
         {
-           
 
             categoriesDataGridView.DataSource =
-                list;
+               Program.dataBase.itemCategories.ToList();
+
         }
 
         private void addCategoryButton_Click(object sender, EventArgs e)
         {
-            AddNewForm form = new AddNewForm();
+            AddNewCategoryForm form = new AddNewCategoryForm();
 
 
             if (form.ShowDialog() == DialogResult.OK)
             {
-
                 var category = new ItemCategory { name = form.field1 };
-               
 
+                var context = Program.dataBase;
 
+                    context.itemCategories.Add(category);
+                    context.SaveChanges();               
 
-               
+                RefreshTable();
 
             }
-
-
-
+            
         }
+
+
+
+
     }
 }

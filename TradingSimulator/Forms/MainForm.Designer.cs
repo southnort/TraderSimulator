@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.categoryButton = new System.Windows.Forms.Button();
+            this.itemsButton = new System.Windows.Forms.Button();
+            this.moneyLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // categoryButton
@@ -41,20 +43,50 @@
             this.categoryButton.UseVisualStyleBackColor = true;
             this.categoryButton.Click += new System.EventHandler(this.categoryButton_Click);
             // 
+            // itemsButton
+            // 
+            this.itemsButton.Location = new System.Drawing.Point(12, 41);
+            this.itemsButton.Name = "itemsButton";
+            this.itemsButton.Size = new System.Drawing.Size(75, 23);
+            this.itemsButton.TabIndex = 1;
+            this.itemsButton.Text = "Предметы";
+            this.itemsButton.UseVisualStyleBackColor = true;
+            this.itemsButton.Click += new System.EventHandler(this.itemsButton_Click);
+            // 
+            // moneyLabel
+            // 
+            this.moneyLabel.AutoSize = true;
+            this.moneyLabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.moneyLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.moneyLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.moneyLabel.Location = new System.Drawing.Point(691, 0);
+            this.moneyLabel.Name = "moneyLabel";
+            this.moneyLabel.Padding = new System.Windows.Forms.Padding(0, 10, 10, 0);
+            this.moneyLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.moneyLabel.Size = new System.Drawing.Size(109, 29);
+            this.moneyLabel.TabIndex = 2;
+            this.moneyLabel.Text = "MONEY TEXT";
+            this.moneyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.moneyLabel);
+            this.Controls.Add(this.itemsButton);
             this.Controls.Add(this.categoryButton);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button categoryButton;
+        private System.Windows.Forms.Button itemsButton;
+        private System.Windows.Forms.Label moneyLabel;
     }
 }

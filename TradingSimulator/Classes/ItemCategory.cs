@@ -10,5 +10,17 @@ namespace TradingSimulator.Classes
         public int id { get; set; }
         public string name { get; set; }
 
+        public ICollection<Item> Items { get; set; }
+
+
+
+        public ItemCategory()
+        {
+            Items = new List<Item>();
+        }
+        public override string ToString()
+        {
+            return name;
+        }
     }
 }
