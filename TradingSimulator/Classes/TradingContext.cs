@@ -11,7 +11,8 @@ namespace TradingSimulator.Classes
     {
         public DbSet<ItemCategory> itemCategories { get; set; }
         public DbSet<Item> items { get; set; }
-        public DbSet<Order> orders { get; set; }
+        public DbSet<BuyOrder> buyOrders { get; set; }
+        public DbSet<SellOrder> sellOrders { get; set; }
 
         public DbSet<Trader> traders { get; set; }
 

@@ -66,11 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\BuyOrder.cs" />
     <Compile Include="Classes\Cargo.cs" />
     <Compile Include="Classes\Extensions.cs" />
     <Compile Include="Classes\Item.cs" />
     <Compile Include="Classes\ItemCategory.cs" />
-    <Compile Include="Classes\Order.cs" />
+    <Compile Include="Classes\SellOrder.cs" />
     <Compile Include="Classes\Trader.cs" />
     <Compile Include="Classes\TradingContext.cs" />
     <Compile Include="Forms\AddNewCategoryForm.cs">

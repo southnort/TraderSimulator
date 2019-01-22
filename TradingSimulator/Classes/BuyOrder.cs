@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace TradingSimulator.Classes
 {
-    public class Cargo
+    public class BuyOrder
     {
         public int id { get; set; }
+        public int ownerID { get; set; }
 
-        public int itemId { get; set; }
+        public int itemID { get; set; }
         public virtual Item Item { get; set; }
+        public float price { get; set; }
         public int count { get; set; }
 
-        public int traderId { get; set; }
-        public virtual Trader Trader { get; set; }
-
+        public long expireTime { get; set; }
+        public long allowChangeTime { get; set; }
     }
 }

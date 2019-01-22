@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace TradingSimulator.Classes
 {
-    public class Order
+    public class SellOrder
     {
         public int id { get; set; }
         public int ownerID { get; set; }

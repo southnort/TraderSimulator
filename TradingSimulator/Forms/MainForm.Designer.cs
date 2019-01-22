@@ -31,6 +31,7 @@
             this.categoryButton = new System.Windows.Forms.Button();
             this.itemsButton = new System.Windows.Forms.Button();
             this.moneyLabel = new System.Windows.Forms.Label();
+            this.tradingButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // categoryButton
@@ -68,11 +69,22 @@
             this.moneyLabel.Text = "MONEY TEXT";
             this.moneyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // tradingButton
+            // 
+            this.tradingButton.Location = new System.Drawing.Point(155, 169);
+            this.tradingButton.Name = "tradingButton";
+            this.tradingButton.Size = new System.Drawing.Size(109, 58);
+            this.tradingButton.TabIndex = 3;
+            this.tradingButton.Text = "Торговля";
+            this.tradingButton.UseVisualStyleBackColor = true;
+            this.tradingButton.Click += new System.EventHandler(this.tradingButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tradingButton);
             this.Controls.Add(this.moneyLabel);
             this.Controls.Add(this.itemsButton);
             this.Controls.Add(this.categoryButton);
@@ -88,5 +100,6 @@
         private System.Windows.Forms.Button categoryButton;
         private System.Windows.Forms.Button itemsButton;
         private System.Windows.Forms.Label moneyLabel;
+        private System.Windows.Forms.Button tradingButton;
     }
 }

@@ -13,24 +13,31 @@ namespace TradingSimulator
         public static TradingContext dataBase;
         public static Trader player;
 
-        
+
         static void Main(string[] args)
         {
             using (TradingContext context = new TradingContext())
             {
                 dataBase = context;
-                if (dataBase.traders.Count()==0)
-                {
-                    dataBase.traders.Add(new Trader { name = "Player" });
 
-                    for (int i = 0; i < 20; i++)
+                if (dataBase.traders.ToList().Count == 0)
+                {
+                    Trader playerTrader = dataBase.traders.Add
+                         (new Trader { name = "Player" });
+                    player = playerTrader;
+
+                    for (int i = 0; i < 5; i++)
                     {
                         dataBase.traders.Add(new Trader { name = Guid.NewGuid().ToString() });
                     }
 
                 }
 
-                player = dataBase.traders.FirstOrDefault(t => t.id == 1);
+                else
+
+                    player = dataBase.traders.First(tr => tr.name == "Player");
+
+
 
 
                 MainForm form = new MainForm();

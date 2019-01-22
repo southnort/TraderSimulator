@@ -38,5 +38,11 @@ namespace TradingSimulator.Forms
             ItemsForm form = new ItemsForm();
             form.ShowDialog();
         }
+
+        private void tradingButton_Click(object sender, EventArgs e)
+        {
+            TradingForm form = new TradingForm();
+            form.ShowDialog();
+        }
     }
 }

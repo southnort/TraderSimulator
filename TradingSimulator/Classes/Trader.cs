@@ -13,8 +13,12 @@ namespace TradingSimulator.Classes
         public float money { get; set; }
 
         public ICollection<Cargo> Cargohold { get; set; }
-        public ICollection<Order> BuyOrders { get; set; }
-        public ICollection<Order> SellOrders { get; set; }
+        public ICollection<BuyOrder> BuyOrders { get; set; }
+        public ICollection<SellOrder> SellOrders { get; set; }
+
+
+        public int maxBuyOrders { get; set; }
+        public int maxSellOrders { get; set; }
 
         
 
@@ -22,9 +26,11 @@ namespace TradingSimulator.Classes
         public Trader()
         {
             Cargohold = new List<Cargo>();
-            BuyOrders = new List<Order>();
-            SellOrders = new List<Order>();
+            BuyOrders = new List<BuyOrder>();
+            SellOrders = new List<SellOrder>();
             money = 200;
+            maxBuyOrders = 5;
+            maxSellOrders = 5;
             
         }
 
