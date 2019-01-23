@@ -29,6 +29,13 @@ namespace TradingSimulator
                     for (int i = 0; i < 5; i++)
                     {
                         dataBase.traders.Add(new Trader { name = Guid.NewGuid().ToString() });
+                        dataBase.itemCategories.Add(new ItemCategory { name = "руда" });
+                        dataBase.items.Add(new Item { name = "Железо", categoryId = 1 });
+                        dataBase.items.Add(new Item { name = "Титан", categoryId = 1 });
+
+
+                        player.Cargos.Add(new Cargo { itemId = 1, count = i });
+                       
                     }
 
                 }
@@ -38,7 +45,12 @@ namespace TradingSimulator
                     player = dataBase.traders.First(tr => tr.name == "Player");
 
 
+                for (int i = 0; i < 15; i++)
+                {
+                    
+                    player.Cargos.Add(new Cargo { itemId = 1, count = i });
 
+                }
 
                 MainForm form = new MainForm();
                 form.ShowDialog();

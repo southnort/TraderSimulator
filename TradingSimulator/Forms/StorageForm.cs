@@ -41,9 +41,21 @@ namespace TradingSimulator.Forms
             int rowCount = storagePanel.Width /
                 (iconOffset + iconWidth);
 
-    здесь
+            for (int i = 0; i < list.Count; i++)
+            {
+                CargoView view = new CargoView(list[i]);
+                int x = i % rowCount * (iconOffset + iconWidth);
+                int y = i / rowCount * (iconOffset + iconHeight);
+                storagePanel.Controls.Add(view);
+
+                view.Location = new Point(x, y);
+            }
 
         }
 
+        private void storagePanel_SizeChanged(object sender, EventArgs e)
+        {
+            ReloadPanel();
+        }
     }
 }

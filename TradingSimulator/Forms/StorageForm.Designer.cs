@@ -36,10 +36,12 @@
             this.storagePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.storagePanel.AutoScroll = true;
             this.storagePanel.Location = new System.Drawing.Point(12, 12);
             this.storagePanel.Name = "storagePanel";
             this.storagePanel.Size = new System.Drawing.Size(960, 381);
             this.storagePanel.TabIndex = 0;
+            this.storagePanel.Resize += new System.EventHandler(this.storagePanel_SizeChanged);
             // 
             // StorageForm
             // 

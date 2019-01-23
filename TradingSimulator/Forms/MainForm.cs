@@ -47,7 +47,8 @@ namespace TradingSimulator.Forms
 
         private void storageButton_Click(object sender, EventArgs e)
         {
-
+            StorageForm form = new StorageForm();
+            form.ShowDialog();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace TradingSimulator.Forms
         {
             InitializeComponent();
 
-            itemNameLabel.Text = cargo.Item.name;
+           // itemNameLabel.Text = cargo.Item.name;
             itemCountLabel.Text = "x " + cargo.count;
         }
     }

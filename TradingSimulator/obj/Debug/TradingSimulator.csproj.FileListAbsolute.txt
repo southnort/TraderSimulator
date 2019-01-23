@@ -40,3 +40,7 @@ C:\Users\Ярик\Documents\Projects\TraderSimulator\TradingSimulator\obj\Debug\
 C:\Users\Ярик\Documents\Projects\TraderSimulator\TradingSimulator\obj\Debug\TradingSimulator.Forms.ItemsForm.resources
 C:\Users\Ярик\Documents\Projects\TraderSimulator\TradingSimulator\obj\Debug\TradingSimulator.Forms.TradingForm.resources
 C:\Users\Ярик\Documents\Projects\TraderSimulator\TradingSimulator\obj\Debug\TradingSimulator.Forms.BuyOrderForm.resources
+C:\Users\User\Documents\Projects\TradingSimulator\TradingSimulator\obj\Debug\TradingSimulator.Forms.BuyOrderForm.resources
+C:\Users\User\Documents\Projects\TradingSimulator\TradingSimulator\obj\Debug\TradingSimulator.Forms.CargoView.resources
+C:\Users\User\Documents\Projects\TradingSimulator\TradingSimulator\obj\Debug\TradingSimulator.Forms.StorageForm.resources
+C:\Users\User\Documents\Projects\TradingSimulator\TradingSimulator\obj\Debug\TradingSimulator.Forms.TradingForm.resources
