@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace TradingSimulator.Forms
 {
-    public partial class AddNewCategoryForm : Form
+    public partial class AddNewCategoryForm : __BaseForm
     {
         public string field1;
         public string field2;
@@ -19,7 +19,7 @@ namespace TradingSimulator.Forms
         public string field5;
 
 
-        public AddNewCategoryForm()
+        public AddNewCategoryForm() : base()
         {
             InitializeComponent();
         }
@@ -38,6 +38,6 @@ namespace TradingSimulator.Forms
         {
             field1 = textBox1.Text;
         }
-               
+
     }
 }

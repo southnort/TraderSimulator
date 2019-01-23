@@ -11,11 +11,11 @@ using TradingSimulator.Classes;
 
 namespace TradingSimulator.Forms
 {
-    public partial class MainForm : Form
+    public partial class MainForm :__BaseForm
     {
 
 
-        public MainForm()
+        public MainForm():base()
         {
             InitializeComponent();
 
@@ -43,6 +43,11 @@ namespace TradingSimulator.Forms
         {
             TradingForm form = new TradingForm();
             form.ShowDialog();
+        }
+
+        private void storageButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

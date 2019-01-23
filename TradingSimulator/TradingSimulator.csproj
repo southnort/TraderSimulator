@@ -80,6 +80,18 @@
     <Compile Include="Forms\AddNewCategoryForm.Designer.cs">
       <DependentUpon>AddNewCategoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BuyOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BuyOrderForm.Designer.cs">
+      <DependentUpon>BuyOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CargoView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\CargoView.Designer.cs">
+      <DependentUpon>CargoView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CategoriesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,11 +116,23 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\StorageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StorageForm.Designer.cs">
+      <DependentUpon>StorageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TradingForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\TradingForm.Designer.cs">
       <DependentUpon>TradingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\__BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\__BaseForm.Designer.cs">
+      <DependentUpon>__BaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -121,6 +145,12 @@
     <EmbeddedResource Include="Forms\AddNewCategoryForm.resx">
       <DependentUpon>AddNewCategoryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BuyOrderForm.resx">
+      <DependentUpon>BuyOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CargoView.resx">
+      <DependentUpon>CargoView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CategoriesForm.resx">
       <DependentUpon>CategoriesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StorageForm.resx">
+      <DependentUpon>StorageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TradingForm.resx">
       <DependentUpon>TradingForm.cs</DependentUpon>

@@ -14,14 +14,24 @@ using TradingSimulator.Classes;
 
 namespace TradingSimulator.Forms
 {
-    public partial class TradingForm : Form
+    public partial class TradingForm : __BaseForm
     {
-        public TradingForm()
+        private Item currentItem;
+
+        public TradingForm() : base()
         {
             InitializeComponent();
 
+            ReloadForm();
             ReloadItemsCategories();
         }
+
+        private void ReloadForm()
+        {
+            playerMoneyLabel.Text = Program.player.money.ToMoney();
+
+        }
+
 
         private void ReloadItemsCategories()
         {
@@ -56,17 +66,19 @@ namespace TradingSimulator.Forms
 
         }
 
+    
+
         private void LoadBuyOrders(Item item)
         {
-            var orders = Program.dataBase.buyOrders.Where(o => o.Item == item);
-            buyOrdersDataGridView.DataSource = orders;
+            var orders = Program.dataBase.buyOrders.Where(o => o.itemID == item.id);
+            buyOrdersDataGridView.DataSource = orders.ToList();
 
         }
 
         private void LoadSellOrders(Item item)
         {
-            var orders = Program.dataBase.sellOrders.Where(o => o.Item == item);
-            sellOrdersDataGridView.DataSource = orders;
+            var orders = Program.dataBase.sellOrders.Where(o => o.itemID == item.id);
+            sellOrdersDataGridView.DataSource = orders.ToList();
 
         }
 
@@ -74,19 +86,40 @@ namespace TradingSimulator.Forms
 
 
 
-        private void treeView1_NodeMouseClick(object sender, 
+        private void treeView1_NodeMouseClick(object sender,
             TreeNodeMouseClickEventArgs e)
         {
             if (e.Node.Tag != null)
             {
                 Item item = (Item)e.Node.Tag;
 
+                itemNameLabel.Text = item.Category.name + " / " + item.name;
+
+                currentItem = item;
+
+                LoadBuyOrders(item);
+                LoadSellOrders(item);
 
             }
 
-              
+
         }
 
-        
+        private void newBuyOrderButton_Click(object sender, EventArgs e)
+        {
+            BuyOrder order = new BuyOrder { Item = currentItem, Trader = Program.player  };
+            BuyOrderForm form = new BuyOrderForm(order);
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                Program.dataBase.buyOrders.Add(form.order);
+                Program.dataBase.SaveChanges();
+            }
+
+            LoadBuyOrders(currentItem);
+            LoadSellOrders(currentItem);
+            ReloadForm();
+
+        }
     }
 }

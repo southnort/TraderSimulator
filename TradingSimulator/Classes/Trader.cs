@@ -10,9 +10,9 @@ namespace TradingSimulator.Classes
         public int id { get; set; }
         public string name { get; set; }
 
-        public float money { get; set; }
+        public decimal money { get; set; }
 
-        public ICollection<Cargo> Cargohold { get; set; }
+        public ICollection<Cargo> Cargos { get; set; }
         public ICollection<BuyOrder> BuyOrders { get; set; }
         public ICollection<SellOrder> SellOrders { get; set; }
 
@@ -25,7 +25,7 @@ namespace TradingSimulator.Classes
 
         public Trader()
         {
-            Cargohold = new List<Cargo>();
+            Cargos = new List<Cargo>();
             BuyOrders = new List<BuyOrder>();
             SellOrders = new List<SellOrder>();
             money = 200;

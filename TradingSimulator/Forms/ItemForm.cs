@@ -11,11 +11,11 @@ using TradingSimulator.Classes;
 
 namespace TradingSimulator.Forms
 {
-    public partial class ItemForm : Form
+    public partial class ItemForm : __BaseForm
     {
         public Item item;
 
-        public ItemForm(Item item)
+        public ItemForm(Item item) : base()
         {
             InitializeComponent();
             this.item = item;

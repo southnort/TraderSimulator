@@ -83,7 +83,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.okButton);
             this.Name = "AddNewCategoryForm";
-            this.Text = "AddNewForm";
+            this.Text = "Новая категория";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -29,9 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.dropFilterButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.newBuyOrderButton = new System.Windows.Forms.Button();
+            this.itemNameLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.sellOrdersDataGridView = new System.Windows.Forms.DataGridView();
@@ -39,17 +44,16 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.buyOrdersDataGridView = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.playerMoneyLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sellOrdersDataGridView)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buyOrdersDataGridView)).BeginInit();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,6 +66,32 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(287, 561);
             this.panel1.TabIndex = 0;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.panel2, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.treeView1, 0, 1);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.76471F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.23529F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(287, 561);
+            this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dropFilterButton);
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(281, 60);
+            this.panel2.TabIndex = 0;
             // 
             // dropFilterButton
             // 
@@ -83,15 +113,48 @@
             this.textBox1.Size = new System.Drawing.Size(275, 23);
             this.textBox1.TabIndex = 0;
             // 
+            // treeView1
+            // 
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.Location = new System.Drawing.Point(3, 69);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(281, 489);
+            this.treeView1.TabIndex = 1;
+            this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
+            // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel3.Controls.Add(this.playerMoneyLabel);
+            this.panel3.Controls.Add(this.newBuyOrderButton);
+            this.panel3.Controls.Add(this.itemNameLabel);
             this.panel3.Location = new System.Drawing.Point(12, 12);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(845, 55);
             this.panel3.TabIndex = 1;
+            // 
+            // newBuyOrderButton
+            // 
+            this.newBuyOrderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.newBuyOrderButton.Location = new System.Drawing.Point(678, 21);
+            this.newBuyOrderButton.Name = "newBuyOrderButton";
+            this.newBuyOrderButton.Size = new System.Drawing.Size(164, 31);
+            this.newBuyOrderButton.TabIndex = 1;
+            this.newBuyOrderButton.Text = "Создать ордер на покупку";
+            this.newBuyOrderButton.UseVisualStyleBackColor = true;
+            this.newBuyOrderButton.Click += new System.EventHandler(this.newBuyOrderButton_Click);
+            // 
+            // itemNameLabel
+            // 
+            this.itemNameLabel.AutoSize = true;
+            this.itemNameLabel.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.itemNameLabel.Location = new System.Drawing.Point(289, 30);
+            this.itemNameLabel.Name = "itemNameLabel";
+            this.itemNameLabel.Size = new System.Drawing.Size(240, 22);
+            this.itemNameLabel.TabIndex = 0;
+            this.itemNameLabel.Text = "itenCategory / itemName";
             // 
             // tableLayoutPanel1
             // 
@@ -182,40 +245,15 @@
             this.buyOrdersDataGridView.Size = new System.Drawing.Size(540, 251);
             this.buyOrdersDataGridView.TabIndex = 2;
             // 
-            // tableLayoutPanel4
+            // playerMoneyLabel
             // 
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.panel2, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.treeView1, 0, 1);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.76471F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.23529F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(287, 561);
-            this.tableLayoutPanel4.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.dropFilterButton);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(281, 59);
-            this.panel2.TabIndex = 0;
-            // 
-            // treeView1
-            // 
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(3, 68);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(281, 490);
-            this.treeView1.TabIndex = 1;
-            this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
+            this.playerMoneyLabel.AutoSize = true;
+            this.playerMoneyLabel.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.playerMoneyLabel.Location = new System.Drawing.Point(3, 9);
+            this.playerMoneyLabel.Name = "playerMoneyLabel";
+            this.playerMoneyLabel.Size = new System.Drawing.Size(96, 17);
+            this.playerMoneyLabel.TabIndex = 2;
+            this.playerMoneyLabel.Text = "playerMoney";
             // 
             // TradingForm
             // 
@@ -228,6 +266,11 @@
             this.Name = "TradingForm";
             this.Text = "TradingForm";
             this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sellOrdersDataGridView)).EndInit();
@@ -235,9 +278,6 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buyOrdersDataGridView)).EndInit();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -258,5 +298,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.Label itemNameLabel;
+        private System.Windows.Forms.Button newBuyOrderButton;
+        private System.Windows.Forms.Label playerMoneyLabel;
     }
 }

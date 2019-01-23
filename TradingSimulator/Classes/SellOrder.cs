@@ -13,7 +13,7 @@ namespace TradingSimulator.Classes
 
         public int itemID { get; set; }
         public virtual Item Item { get; set; }
-        public float price { get; set; }
+        public decimal price { get; set; }
         public int count { get; set; }
 
         public long expireTime { get; set; }

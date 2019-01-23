@@ -32,6 +32,7 @@
             this.itemsButton = new System.Windows.Forms.Button();
             this.moneyLabel = new System.Windows.Forms.Label();
             this.tradingButton = new System.Windows.Forms.Button();
+            this.storageButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // categoryButton
@@ -71,7 +72,7 @@
             // 
             // tradingButton
             // 
-            this.tradingButton.Location = new System.Drawing.Point(155, 169);
+            this.tradingButton.Location = new System.Drawing.Point(227, 174);
             this.tradingButton.Name = "tradingButton";
             this.tradingButton.Size = new System.Drawing.Size(109, 58);
             this.tradingButton.TabIndex = 3;
@@ -79,11 +80,22 @@
             this.tradingButton.UseVisualStyleBackColor = true;
             this.tradingButton.Click += new System.EventHandler(this.tradingButton_Click);
             // 
+            // storageButton
+            // 
+            this.storageButton.Location = new System.Drawing.Point(342, 174);
+            this.storageButton.Name = "storageButton";
+            this.storageButton.Size = new System.Drawing.Size(109, 58);
+            this.storageButton.TabIndex = 4;
+            this.storageButton.Text = "Хранилище";
+            this.storageButton.UseVisualStyleBackColor = true;
+            this.storageButton.Click += new System.EventHandler(this.storageButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.storageButton);
             this.Controls.Add(this.tradingButton);
             this.Controls.Add(this.moneyLabel);
             this.Controls.Add(this.itemsButton);
@@ -101,5 +113,6 @@
         private System.Windows.Forms.Button itemsButton;
         private System.Windows.Forms.Label moneyLabel;
         private System.Windows.Forms.Button tradingButton;
+        private System.Windows.Forms.Button storageButton;
     }
 }

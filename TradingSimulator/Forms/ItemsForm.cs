@@ -11,9 +11,9 @@ using TradingSimulator.Classes;
 
 namespace TradingSimulator.Forms
 {
-    public partial class ItemsForm : Form
+    public partial class ItemsForm : __BaseForm
     {
-        public ItemsForm()
+        public ItemsForm() : base()
         {
             InitializeComponent();
 

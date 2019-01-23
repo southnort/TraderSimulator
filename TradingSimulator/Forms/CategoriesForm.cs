@@ -11,10 +11,10 @@ using TradingSimulator.Classes;
 
 namespace TradingSimulator.Forms
 {
-    public partial class CategoriesForm : Form
+    public partial class CategoriesForm : __BaseForm
     {
 
-        public CategoriesForm()
+        public CategoriesForm() : base()
         {
             InitializeComponent();
 
@@ -41,13 +41,13 @@ namespace TradingSimulator.Forms
 
                 var context = Program.dataBase;
 
-                    context.itemCategories.Add(category);
-                    context.SaveChanges();               
+                context.itemCategories.Add(category);
+                context.SaveChanges();
 
                 RefreshTable();
 
             }
-            
+
         }
 
 

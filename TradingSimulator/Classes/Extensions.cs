@@ -8,10 +8,12 @@ namespace TradingSimulator.Classes
 {
    public static class Extensions
     {
-        public static string ToMoney(this float money)
+        public static string ToMoney(this decimal money)
         {
             return money.ToString("### ### #### ### ### ### ### ###.00 $");
         }
+
+        
 
     }
 }
