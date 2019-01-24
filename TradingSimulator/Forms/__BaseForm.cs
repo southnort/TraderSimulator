@@ -14,6 +14,8 @@ namespace TradingSimulator.Forms
     {
         public __BaseForm()
         {
+            Program.TradeSystemTick();
+
             KeyPreview = true;
             KeyUp += EscapeKeyPressed;
             InitializeComponent();

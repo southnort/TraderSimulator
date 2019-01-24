@@ -30,8 +30,8 @@ namespace TradingSimulator.Forms
             itemName.Text = item.name;
             rarityNumericUpDown.Value = item.rarity;
 
-            if (item.Category != null)
-                categoryComboBox.SelectedItem = item.Category;
+            if (item.ItemCategory != null)
+                categoryComboBox.SelectedItem = item.ItemCategory;
 
 
 
@@ -65,7 +65,7 @@ namespace TradingSimulator.Forms
 
         private void categoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            item.Category = (ItemCategory)categoryComboBox.SelectedItem;
+            item.ItemCategory = (ItemCategory)categoryComboBox.SelectedItem;
         }
 
 

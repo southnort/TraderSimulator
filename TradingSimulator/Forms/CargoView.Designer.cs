@@ -62,6 +62,7 @@
             this.sellButton.TabIndex = 2;
             this.sellButton.Text = "Продать";
             this.sellButton.UseVisualStyleBackColor = true;
+            this.sellButton.Click += new System.EventHandler(this.sellButton_Click);
             // 
             // dropButton
             // 
@@ -71,6 +72,7 @@
             this.dropButton.TabIndex = 3;
             this.dropButton.Text = "Выкинуть";
             this.dropButton.UseVisualStyleBackColor = true;
+            this.dropButton.Click += new System.EventHandler(this.dropButton_Click);
             // 
             // CargoView
             // 

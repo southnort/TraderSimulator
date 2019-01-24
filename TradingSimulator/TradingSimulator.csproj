@@ -69,11 +69,15 @@
     <Compile Include="Classes\BuyOrder.cs" />
     <Compile Include="Classes\Cargo.cs" />
     <Compile Include="Classes\Extensions.cs" />
+    <Compile Include="Classes\HistoryNode.cs" />
     <Compile Include="Classes\Item.cs" />
     <Compile Include="Classes\ItemCategory.cs" />
+    <Compile Include="Classes\Order.cs" />
     <Compile Include="Classes\SellOrder.cs" />
     <Compile Include="Classes\Trader.cs" />
     <Compile Include="Classes\TradingContext.cs" />
+    <Compile Include="Controllers\OrdersContoller.cs" />
+    <Compile Include="Controllers\TradersController.cs" />
     <Compile Include="Forms\AddNewCategoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,9 +174,7 @@
       <DependentUpon>TradingForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

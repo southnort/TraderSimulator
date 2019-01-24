@@ -11,11 +11,11 @@ namespace TradingSimulator.Classes
         public int id { get; set; }
 
         public int itemId { get; set; }
-        public virtual Item Item { get; set; }
+        public Item Item { get; set; }
         public int count { get; set; }
 
         public int traderId { get; set; }
-        public virtual Trader Trader { get; set; }
+        public Trader Trader { get; set; }
 
     }
 }

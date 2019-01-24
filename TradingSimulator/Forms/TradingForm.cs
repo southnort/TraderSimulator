@@ -26,6 +26,19 @@ namespace TradingSimulator.Forms
             ReloadItemsCategories();
         }
 
+        public TradingForm(Item item) : base()
+        {
+            InitializeComponent();
+
+            currentItem = item;
+
+            ReloadForm();
+            ReloadItemsCategories();
+
+            itemNameLabel.Text = item.ItemCategory.name + " / " + item.name;
+            ReloadOrders();
+        }
+
         private void ReloadForm()
         {
             playerMoneyLabel.Text = Program.player.money.ToMoney();
@@ -66,7 +79,12 @@ namespace TradingSimulator.Forms
 
         }
 
-    
+        private void ReloadOrders()
+        {
+
+            LoadBuyOrders(currentItem);
+            LoadSellOrders(currentItem);
+        }
 
         private void LoadBuyOrders(Item item)
         {
@@ -93,16 +111,13 @@ namespace TradingSimulator.Forms
             {
                 Item item = (Item)e.Node.Tag;
 
-                itemNameLabel.Text = item.Category.name + " / " + item.name;
+                itemNameLabel.Text = item.ItemCategory.name + " / " + item.name;
 
                 currentItem = item;
 
-                LoadBuyOrders(item);
-                LoadSellOrders(item);
+                ReloadOrders();
 
             }
-
-
         }
 
         private void newBuyOrderButton_Click(object sender, EventArgs e)

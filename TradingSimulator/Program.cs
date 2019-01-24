@@ -5,6 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using TradingSimulator.Classes;
 using TradingSimulator.Forms;
+using System.Threading;
+using System.Timers;
+using TradingSimulator.Controllers;
+using System.Windows.Forms;
+
 
 namespace TradingSimulator
 {
@@ -12,6 +17,10 @@ namespace TradingSimulator
     {
         public static TradingContext dataBase;
         public static Trader player;
+
+
+        private static TradersController tradersController = new TradersController();
+
 
 
         static void Main(string[] args)
@@ -22,40 +31,59 @@ namespace TradingSimulator
 
                 if (dataBase.traders.ToList().Count == 0)
                 {
-                    Trader playerTrader = dataBase.traders.Add
-                         (new Trader { name = "Player" });
-                    player = playerTrader;
-
-                    for (int i = 0; i < 5; i++)
-                    {
-                        dataBase.traders.Add(new Trader { name = Guid.NewGuid().ToString() });
-                        dataBase.itemCategories.Add(new ItemCategory { name = "руда" });
-                        dataBase.items.Add(new Item { name = "Железо", categoryId = 1 });
-                        dataBase.items.Add(new Item { name = "Титан", categoryId = 1 });
-
-
-                        player.Cargos.Add(new Cargo { itemId = 1, count = i });
-                       
-                    }
+                    InitializeDb();
 
                 }
 
                 else
-
                     player = dataBase.traders.First(tr => tr.name == "Player");
 
-
-                for (int i = 0; i < 15; i++)
-                {
-                    
-                    player.Cargos.Add(new Cargo { itemId = 1, count = i });
-
-                }
 
                 MainForm form = new MainForm();
                 form.ShowDialog();
 
+
+                // Application.Run();
             }
         }
+
+        private static void InitializeDb()
+        {
+            Trader playerTrader = dataBase.traders.Add
+                         (new Trader { name = "Player" });
+            player = playerTrader;
+
+            dataBase.itemCategories.Add(new ItemCategory { name = "Руда" });
+            dataBase.itemCategories.Add(new ItemCategory { name = "Металлы" });
+            dataBase.SaveChanges();
+
+            dataBase.items.Add(new Item { name = "Бистот", ItemCategoryId = 1 });
+            dataBase.items.Add(new Item { name = "Крокит", ItemCategoryId = 1 });
+            dataBase.SaveChanges();
+
+            dataBase.items.Add(new Item { name = "Железо", ItemCategoryId = 2 });
+            dataBase.items.Add(new Item { name = "Титан", ItemCategoryId = 2 });
+            dataBase.SaveChanges();
+
+
+            for (int i = 0; i < 5; i++)
+            {
+                dataBase.traders.Add(new Trader { name = Guid.NewGuid().ToString() });
+                dataBase.SaveChanges();
+            }
+
+        }
+
+
+
+        public static void TradeSystemTick()
+        {            
+            tradersController.Tick();
+
+        }
+
+
     }
+
+
 }

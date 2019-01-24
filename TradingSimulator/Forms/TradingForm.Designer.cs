@@ -35,6 +35,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.playerMoneyLabel = new System.Windows.Forms.Label();
             this.newBuyOrderButton = new System.Windows.Forms.Button();
             this.itemNameLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -44,7 +45,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.buyOrdersDataGridView = new System.Windows.Forms.DataGridView();
-            this.playerMoneyLabel = new System.Windows.Forms.Label();
+            this.findButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -85,6 +86,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.findButton);
             this.panel2.Controls.Add(this.dropFilterButton);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -110,7 +112,7 @@
             this.textBox1.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.Location = new System.Drawing.Point(3, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(275, 23);
+            this.textBox1.Size = new System.Drawing.Size(194, 23);
             this.textBox1.TabIndex = 0;
             // 
             // treeView1
@@ -134,6 +136,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(845, 55);
             this.panel3.TabIndex = 1;
+            // 
+            // playerMoneyLabel
+            // 
+            this.playerMoneyLabel.AutoSize = true;
+            this.playerMoneyLabel.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.playerMoneyLabel.Location = new System.Drawing.Point(3, 9);
+            this.playerMoneyLabel.Name = "playerMoneyLabel";
+            this.playerMoneyLabel.Size = new System.Drawing.Size(96, 17);
+            this.playerMoneyLabel.TabIndex = 2;
+            this.playerMoneyLabel.Text = "playerMoney";
             // 
             // newBuyOrderButton
             // 
@@ -245,15 +257,15 @@
             this.buyOrdersDataGridView.Size = new System.Drawing.Size(540, 251);
             this.buyOrdersDataGridView.TabIndex = 2;
             // 
-            // playerMoneyLabel
+            // findButton
             // 
-            this.playerMoneyLabel.AutoSize = true;
-            this.playerMoneyLabel.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.playerMoneyLabel.Location = new System.Drawing.Point(3, 9);
-            this.playerMoneyLabel.Name = "playerMoneyLabel";
-            this.playerMoneyLabel.Size = new System.Drawing.Size(96, 17);
-            this.playerMoneyLabel.TabIndex = 2;
-            this.playerMoneyLabel.Text = "playerMoney";
+            this.findButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.findButton.Location = new System.Drawing.Point(203, 3);
+            this.findButton.Name = "findButton";
+            this.findButton.Size = new System.Drawing.Size(75, 23);
+            this.findButton.TabIndex = 2;
+            this.findButton.Text = "Поиск";
+            this.findButton.UseVisualStyleBackColor = true;
             // 
             // TradingForm
             // 
@@ -301,5 +313,6 @@
         private System.Windows.Forms.Label itemNameLabel;
         private System.Windows.Forms.Button newBuyOrderButton;
         private System.Windows.Forms.Label playerMoneyLabel;
+        private System.Windows.Forms.Button findButton;
     }
 }
