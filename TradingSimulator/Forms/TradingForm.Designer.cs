@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.findButton = new System.Windows.Forms.Button();
             this.dropFilterButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.treeView1 = new System.Windows.Forms.TreeView();
@@ -40,21 +41,26 @@
             this.itemNameLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.sellOrdersDataGridView = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.buyOrdersDataGridView = new System.Windows.Forms.DataGridView();
-            this.findButton = new System.Windows.Forms.Button();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.expireTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sellOrdersDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sellOrdersDataGridView)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buyOrdersDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sellOrdersDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,7 +71,7 @@
             this.panel1.Controls.Add(this.tableLayoutPanel4);
             this.panel1.Location = new System.Drawing.Point(12, 73);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(287, 561);
+            this.panel1.Size = new System.Drawing.Size(267, 561);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -81,7 +87,8 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.76471F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.23529F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(287, 561);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(267, 561);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // panel2
@@ -92,13 +99,23 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(281, 60);
+            this.panel2.Size = new System.Drawing.Size(261, 60);
             this.panel2.TabIndex = 0;
+            // 
+            // findButton
+            // 
+            this.findButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.findButton.Location = new System.Drawing.Point(183, 3);
+            this.findButton.Name = "findButton";
+            this.findButton.Size = new System.Drawing.Size(75, 23);
+            this.findButton.TabIndex = 2;
+            this.findButton.Text = "Поиск";
+            this.findButton.UseVisualStyleBackColor = true;
             // 
             // dropFilterButton
             // 
             this.dropFilterButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dropFilterButton.Location = new System.Drawing.Point(203, 32);
+            this.dropFilterButton.Location = new System.Drawing.Point(183, 32);
             this.dropFilterButton.Name = "dropFilterButton";
             this.dropFilterButton.Size = new System.Drawing.Size(75, 23);
             this.dropFilterButton.TabIndex = 1;
@@ -112,7 +129,7 @@
             this.textBox1.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.Location = new System.Drawing.Point(3, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 23);
+            this.textBox1.Size = new System.Drawing.Size(174, 23);
             this.textBox1.TabIndex = 0;
             // 
             // treeView1
@@ -120,7 +137,7 @@
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(3, 69);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(281, 489);
+            this.treeView1.Size = new System.Drawing.Size(261, 489);
             this.treeView1.TabIndex = 1;
             this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
             // 
@@ -173,8 +190,8 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.sellOrdersDataGridView, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -182,7 +199,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.606606F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.39339F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(546, 274);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(566, 274);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // label1
@@ -195,15 +212,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Продавцы";
             // 
-            // sellOrdersDataGridView
-            // 
-            this.sellOrdersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sellOrdersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sellOrdersDataGridView.Location = new System.Drawing.Point(3, 21);
-            this.sellOrdersDataGridView.Name = "sellOrdersDataGridView";
-            this.sellOrdersDataGridView.Size = new System.Drawing.Size(540, 250);
-            this.sellOrdersDataGridView.TabIndex = 1;
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -214,12 +222,12 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(305, 73);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(285, 73);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(552, 561);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(572, 561);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // tableLayoutPanel3
@@ -235,7 +243,8 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.886228F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.11377F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(546, 275);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(566, 275);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // label2
@@ -250,22 +259,67 @@
             // 
             // buyOrdersDataGridView
             // 
+            this.buyOrdersDataGridView.AllowUserToAddRows = false;
+            this.buyOrdersDataGridView.AllowUserToDeleteRows = false;
             this.buyOrdersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.buyOrdersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buyOrdersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.price,
+            this.count,
+            this.expireTime});
             this.buyOrdersDataGridView.Location = new System.Drawing.Point(3, 21);
             this.buyOrdersDataGridView.Name = "buyOrdersDataGridView";
-            this.buyOrdersDataGridView.Size = new System.Drawing.Size(540, 251);
+            this.buyOrdersDataGridView.Size = new System.Drawing.Size(560, 251);
             this.buyOrdersDataGridView.TabIndex = 2;
             // 
-            // findButton
+            // price
             // 
-            this.findButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.findButton.Location = new System.Drawing.Point(203, 3);
-            this.findButton.Name = "findButton";
-            this.findButton.Size = new System.Drawing.Size(75, 23);
-            this.findButton.TabIndex = 2;
-            this.findButton.Text = "Поиск";
-            this.findButton.UseVisualStyleBackColor = true;
+            this.price.HeaderText = "Цена";
+            this.price.Name = "price";
+            this.price.Width = 200;
+            // 
+            // count
+            // 
+            this.count.HeaderText = "количество";
+            this.count.Name = "count";
+            this.count.Width = 150;
+            // 
+            // expireTime
+            // 
+            this.expireTime.HeaderText = "Истекает";
+            this.expireTime.Name = "expireTime";
+            this.expireTime.Width = 150;
+            // 
+            // sellOrdersDataGridView
+            // 
+            this.sellOrdersDataGridView.AllowUserToAddRows = false;
+            this.sellOrdersDataGridView.AllowUserToDeleteRows = false;
+            this.sellOrdersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sellOrdersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.sellOrdersDataGridView.Location = new System.Drawing.Point(3, 21);
+            this.sellOrdersDataGridView.Name = "sellOrdersDataGridView";
+            this.sellOrdersDataGridView.Size = new System.Drawing.Size(560, 250);
+            this.sellOrdersDataGridView.TabIndex = 3;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Цена";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "количество";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Истекает";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 150;
             // 
             // TradingForm
             // 
@@ -285,11 +339,11 @@
             this.panel3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sellOrdersDataGridView)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buyOrdersDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sellOrdersDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -300,7 +354,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView sellOrdersDataGridView;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label2;
@@ -314,5 +367,12 @@
         private System.Windows.Forms.Button newBuyOrderButton;
         private System.Windows.Forms.Label playerMoneyLabel;
         private System.Windows.Forms.Button findButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn count;
+        private System.Windows.Forms.DataGridViewTextBoxColumn expireTime;
+        private System.Windows.Forms.DataGridView sellOrdersDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

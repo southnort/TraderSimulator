@@ -31,6 +31,7 @@ namespace TradingSimulator.Forms
         {
             CategoriesForm form = new CategoriesForm();
             form.ShowDialog();
+            
         }
 
         private void itemsButton_Click(object sender, EventArgs e)
@@ -43,12 +44,14 @@ namespace TradingSimulator.Forms
         {
             TradingForm form = new TradingForm();
             form.ShowDialog();
+            RefreshTable();
         }
 
         private void storageButton_Click(object sender, EventArgs e)
         {
             StorageForm form = new StorageForm();
             form.ShowDialog();
+            RefreshTable();
         }
     }
 }

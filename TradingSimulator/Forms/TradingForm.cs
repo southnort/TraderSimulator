@@ -81,22 +81,56 @@ namespace TradingSimulator.Forms
 
         private void ReloadOrders()
         {
-
             LoadBuyOrders(currentItem);
             LoadSellOrders(currentItem);
         }
 
         private void LoadBuyOrders(Item item)
         {
+            buyOrdersDataGridView.Rows.Clear();
             var orders = Program.dataBase.buyOrders.Where(o => o.itemID == item.id);
-            buyOrdersDataGridView.DataSource = orders.ToList();
+            orders = orders.OrderByDescending(o => o.price);
+
+            foreach (var order in orders)
+            {
+                int rowNum = buyOrdersDataGridView.Rows.Add();
+                var row = buyOrdersDataGridView.Rows[rowNum];
+
+                row.Cells["price"].Value = order.price.ToMoney();
+                row.Cells["count"].Value = order.count;
+                row.Cells["expireTime"].Value = order.expireTime.TimeRemains();
+
+                if (order.Trader == Program.player)
+                {
+                    row.DefaultCellStyle.BackColor = Color.LightBlue;
+
+                }
+            }
+
 
         }
 
         private void LoadSellOrders(Item item)
         {
+            sellOrdersDataGridView.Rows.Clear();
             var orders = Program.dataBase.sellOrders.Where(o => o.itemID == item.id);
-            sellOrdersDataGridView.DataSource = orders.ToList();
+            orders = orders.OrderBy(o => o.price);
+
+            foreach (var order in orders)
+            {
+                int rowNum = sellOrdersDataGridView.Rows.Add();
+                var row = sellOrdersDataGridView.Rows[rowNum];
+
+                row.Cells["price"].Value = order.price.ToMoney();
+                row.Cells["count"].Value = order.count;
+                row.Cells["expireTime"].Value = order.expireTime.TimeRemains();
+
+                if (order.Trader == Program.player)
+                {
+                    row.DefaultCellStyle.BackColor = Color.LightBlue;
+
+                }
+            }
 
         }
 

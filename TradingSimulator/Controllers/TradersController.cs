@@ -56,13 +56,14 @@ namespace TradingSimulator.Controllers
             Random rand = new Random();
             foreach (var tr in Program.dataBase.traders.ToList())
             {
-                if (rand.NextDouble() < 0.31)
-                    result.Add(tr);
+                if (tr != Program.player)
+                    if (rand.NextDouble() < 0.31)
+                        result.Add(tr);
             }
 
             return result;
         }
-        
+
     }
 
 
