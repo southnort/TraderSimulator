@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
+
+
 
 namespace TradingSimulator.Classes
 {
@@ -14,7 +17,7 @@ namespace TradingSimulator.Classes
         public DbSet<BuyOrder> buyOrders { get; set; }
         public DbSet<SellOrder> sellOrders { get; set; }
         public DbSet<Trader> traders { get; set; }
-       // public DbSet<HistoryNode> HistoryNodes { get; set; }
+        public DbSet<HistoryNode> HistoryNodes { get; set; }
 
 
         public TradingContext()
@@ -24,6 +27,13 @@ namespace TradingSimulator.Classes
         }
 
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+        }
 
     }
 }

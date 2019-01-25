@@ -76,8 +76,10 @@
     <Compile Include="Classes\SellOrder.cs" />
     <Compile Include="Classes\Trader.cs" />
     <Compile Include="Classes\TradingContext.cs" />
+    <Compile Include="Classes\TradingShip.cs" />
     <Compile Include="Controllers\OrdersContoller.cs" />
     <Compile Include="Controllers\TradersController.cs" />
+    <Compile Include="Controllers\TradingShipsController.cs" />
     <Compile Include="Forms\AddNewCategoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
