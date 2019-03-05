@@ -70,6 +70,7 @@
     <Compile Include="Classes\Cargo.cs" />
     <Compile Include="Classes\Extensions.cs" />
     <Compile Include="Classes\HistoryNode.cs" />
+    <Compile Include="Classes\IBuyerSeller.cs" />
     <Compile Include="Classes\Item.cs" />
     <Compile Include="Classes\ItemCategory.cs" />
     <Compile Include="Classes\Order.cs" />
@@ -174,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TradingForm.resx">
       <DependentUpon>TradingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\__BaseForm.resx">
+      <DependentUpon>__BaseForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

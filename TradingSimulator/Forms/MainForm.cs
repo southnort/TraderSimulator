@@ -24,7 +24,7 @@ namespace TradingSimulator.Forms
 
         private void RefreshTable()
         {
-            moneyLabel.Text = Program.player.money.ToMoney();
+            moneyLabel.Text = Program.player.Money.ToMoney();
         }
 
         private void categoryButton_Click(object sender, EventArgs e)

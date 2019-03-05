@@ -9,9 +9,11 @@ namespace TradingSimulator.Controllers
 {
     public class TradersController
     {
+        private Random rand = new Random();
+
         public void Tick()
         {
-            CreateRandomBuyOrders();
+          //  CreateRandomBuyOrders();
         }
 
 
@@ -28,23 +30,28 @@ namespace TradingSimulator.Controllers
 
             BuyOrder order = new BuyOrder { Trader = trader };
 
-            Item item = Extensions.GetRandomItemFrom(Program.dataBase.items.ToList());
+            var items = Program.dataBase.items.ToList();
+            if (items.Count > 0)
+            {
+                int num = rand.Next(0, items.Count);
+                Item item = items[num];
 
-            int count = 5;
-            int price = ((int)(trader.money / trader.maxBuyOrders) / count);
-            long changeTime = DateTime.Now.AddMinutes(5).DateToLong();
-            long expireTime = DateTime.Now.AddDays(3).DateToLong();
+                int count = 5;
+                int price = ((int)(trader.Money / trader.maxBuyOrders) / count);
+                long changeTime = DateTime.Now.AddMinutes(5).DateToLong();
+                long expireTime = DateTime.Now.AddDays(3).DateToLong();
 
 
-            order.Item = item;
-            order.price = price;
-            order.count = count;
-            order.allowChangeTime = changeTime;
-            order.expireTime = expireTime;
+                order.Item = item;
+                order.price = price;
+                order.count = count;
+                order.allowChangeTime = changeTime;
+                order.expireTime = expireTime;
 
-            trader.money -= (price * count);
-            Program.dataBase.buyOrders.Add(order);
-            Program.dataBase.SaveChanges();
+                trader.Money -= (price * count);
+                Program.dataBase.buyOrders.Add(order);
+                Program.dataBase.SaveChanges();
+            }
 
         }
 

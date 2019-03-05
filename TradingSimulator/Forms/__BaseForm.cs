@@ -14,11 +14,11 @@ namespace TradingSimulator.Forms
     {
         public __BaseForm()
         {
-          //  Program.TradeSystemTick();
-
             KeyPreview = true;
             KeyUp += EscapeKeyPressed;
             InitializeComponent();
+
+            Load += __BaseForm_Load;
         }
 
 
@@ -27,8 +27,14 @@ namespace TradingSimulator.Forms
             if (e.KeyCode == Keys.Escape)
             {
                 DialogResult = DialogResult.Cancel;
-            }            
+            }
         }
-        
+
+        private void __BaseForm_Load(object sender, EventArgs e)
+        {
+            Program.GameTick();
+
+
+        }
     }
 }

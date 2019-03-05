@@ -17,9 +17,11 @@ namespace TradingSimulator
     {
         public static TradingContext dataBase;
         public static Trader player;
+        public static OrdersContoller ordersContoller;
 
 
         private static TradersController tradersController = new TradersController();
+        private static TradingShipsController tradingShipsController = new TradingShipsController();
 
 
 
@@ -28,6 +30,7 @@ namespace TradingSimulator
             using (TradingContext context = new TradingContext())
             {
                 dataBase = context;
+                ordersContoller = new OrdersContoller();
 
                 if (dataBase.traders.ToList().Count == 0)
                 {
@@ -76,10 +79,37 @@ namespace TradingSimulator
 
 
 
-        public static void TradeSystemTick()
-        {            
-            tradersController.Tick();
+        public static void GameTick()
+        {
+            try
+            {
+                tradersController.Tick();
+                tradingShipsController.Tick();
+                ClearDataBase();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("\n\n#################################\n\n");
+                Console.WriteLine(ex.ToString());
+            }
 
+        }
+
+        private static void ClearDataBase()
+        {
+            foreach (var order in dataBase.sellOrders)
+            {
+                if (order.count < 1)
+                    dataBase.sellOrders.Remove(order);
+                dataBase.SaveChanges();
+            }
+
+            foreach (var order in dataBase.buyOrders)
+            {
+                if (order.count < 1)
+                    dataBase.buyOrders.Remove(order);
+                dataBase.SaveChanges();
+            }
         }
 
 

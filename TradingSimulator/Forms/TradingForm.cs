@@ -41,7 +41,7 @@ namespace TradingSimulator.Forms
 
         private void ReloadForm()
         {
-            playerMoneyLabel.Text = Program.player.money.ToMoney();
+            playerMoneyLabel.Text = Program.player.Money.ToMoney();
 
         }
 
@@ -148,6 +148,7 @@ namespace TradingSimulator.Forms
                 itemNameLabel.Text = item.ItemCategory.name + " / " + item.name;
 
                 currentItem = item;
+                newBuyOrderButton.Enabled = true;   
 
                 ReloadOrders();
 

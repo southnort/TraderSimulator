@@ -46,3 +46,4 @@ C:\Users\User\Documents\Projects\TradingSimulator\TradingSimulator\obj\Debug\Tra
 C:\Users\User\Documents\Projects\TradingSimulator\TradingSimulator\obj\Debug\TradingSimulator.Forms.TradingForm.resources
 C:\Users\Ярик\Documents\Projects\TraderSimulator\TradingSimulator\obj\Debug\TradingSimulator.Forms.CargoView.resources
 C:\Users\Ярик\Documents\Projects\TraderSimulator\TradingSimulator\obj\Debug\TradingSimulator.Forms.StorageForm.resources
+C:\Users\User\Documents\Projects\TradingSimulator\TradingSimulator\obj\Debug\TradingSimulator.Forms.__BaseForm.resources

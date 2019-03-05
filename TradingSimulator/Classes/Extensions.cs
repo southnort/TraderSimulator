@@ -10,7 +10,7 @@ namespace TradingSimulator.Classes
     {
         public static string ToMoney(this decimal money)
         {
-            return money.ToString("### ### #### ### ### ### ### ###.00 $");
+            return money.ToString("### ### ### ### ###.00");
         }
 
         public static long DateToLong(this DateTime dateTime)
@@ -37,20 +37,6 @@ namespace TradingSimulator.Classes
             else
                 return $"{result.Seconds} сек.";
 
-        }
-
-
-
-        public static T GetRandomItemFrom<T>(List<T> list)
-        {
-            Random random = new Random();
-            int number = random.Next(0, list.Count + 1);
-
-            return list[number];
-        }
-
-
-
-
+        }       
     }
 }

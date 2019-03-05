@@ -9,9 +9,22 @@ namespace TradingSimulator.Controllers
 {
     public class TradingShipsController
     {
+        private int maxShipCount = 2;
+        private Random rand = new Random();
+
         public void Tick()
         {
+            var ships = new List<TradingShip>();
 
+            for (int i = 0; i < rand.Next(0, maxShipCount); i++)
+            {
+                ships.Add(NewShip());
+
+            }
+            foreach (var ship in ships)
+            {
+                ship.Tick();
+            }
         }
 
         private void ShipIsCome()
@@ -41,13 +54,18 @@ namespace TradingSimulator.Controllers
 
             while (countOfItems > 0)
             {
-                var item = Extensions.GetRandomItemFrom(Program.dataBase.items.ToList());
-                int count = rand.Next(1, 30);
+                var list = Program.dataBase.items.ToList();
+                if (list.Count > 0)
+                {
+                    int num = rand.Next(0, list.Count);
+                    var item = list[num];
+                    int count = rand.Next(1, 30);
 
-                if (!result.ContainsKey(item))
-                    result.Add(item, 0);
+                    if (!result.ContainsKey(item))
+                        result.Add(item, 0);
 
-                result[item] += count;
+                    result[item] += count;
+                }
             }
 
             return result;

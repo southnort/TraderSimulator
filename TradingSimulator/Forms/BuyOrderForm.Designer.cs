@@ -65,6 +65,11 @@
             this.priceNumericUpDown.DecimalPlaces = 2;
             this.priceNumericUpDown.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.priceNumericUpDown.Location = new System.Drawing.Point(134, 85);
+            this.priceNumericUpDown.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
             this.priceNumericUpDown.Name = "priceNumericUpDown";
             this.priceNumericUpDown.Size = new System.Drawing.Size(189, 23);
             this.priceNumericUpDown.TabIndex = 2;
@@ -74,10 +79,15 @@
             // 
             this.countNumericUpDown.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.countNumericUpDown.Location = new System.Drawing.Point(134, 114);
+            this.countNumericUpDown.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
             this.countNumericUpDown.Name = "countNumericUpDown";
             this.countNumericUpDown.Size = new System.Drawing.Size(189, 23);
             this.countNumericUpDown.TabIndex = 4;
-            this.countNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.countNumericUpDown_KeyPress);
+            this.countNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.priceNumericUpDown_KeyUp);
             // 
             // label2
             // 
